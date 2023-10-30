@@ -1,22 +1,19 @@
-'''
-1) define 3 functions "add()","modify()" and "delete()" with just a print message.
-now accept input from user as a number. if the number entered is 1, call "add()"
-if it is 2, call "modify()" if it is 3, call "delete()" [ hint: use "match... case" ]
-'''
-def add():
-    print("in add")
-def modify():
-    print("in modify")
-def delete():
-    print("in delete")
+"""
+1) store marks of 5 subjects
+	here use marks as actual data and subject names as indexes.
+accept both marks and subjects from the user.
+"""
+import pandas as pd
 
-x=int(input("enter a number"))
+dict = {}
 
-if x==1:
-    add()
-elif x==2:
-    modify()
-elif x==3:
-    delete()
-else:
-    print("enter 1 to 3")
+for i in range(5):
+    subject=input("Enter your Subject Name - ")
+    marks=int(input("Enter marks you got - " ))
+
+    dict[subject]=marks
+
+print(dict)
+
+marksheet=pd.Series(dict)
+print(marksheet)
